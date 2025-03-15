@@ -68,7 +68,7 @@ namespace CATReloaded_W2
         public int id { get; set; }  
         public string name { get; set; }
         public char gender;
-        public double salary { get; set; }
+        public decimal salary { get; set; }
         public string hiredate { get; set; }
         public securitylevel security { get; set; }
         public char Gender
@@ -90,7 +90,7 @@ namespace CATReloaded_W2
                 }
             }
         }
-        public employee(int id, string name, char gender, double salary, string hireDate, securitylevel security)
+        public employee(int id, string name, char gender, decimal salary, string hireDate, securitylevel security)
         {
             this.id = id;
             this.name = name;
@@ -101,16 +101,16 @@ namespace CATReloaded_W2
         }
         public override string ToString()
         {
-            return $" ID: {id}\n Name: {name}\n Gender: {gender}\n Salary: {salary}\n Hire Date: {hiredate}\n Security Level: {security}\n";
+            return $" ID: {id}\n Name: {name}\n Gender: {gender}\n Salary: {salary:C}\n Hire Date: {hiredate}\n Security Level: {security}\n";
         }
         class Program
         {
             static void Main()
             {
-                employee emp1 = new employee(1, "Mohammed Abdelaziz", 'M', 5000.50, "2024/6/15", securitylevel.developer) ;
+                employee emp1 = new employee(1, "Mohammed Abdelaziz", 'M', 5000.50m, "2024/6/15", securitylevel.developer) ;
                 Console.WriteLine(emp1.ToString());
 
-                employee emp2 = new employee(2, "Sara Soroor", 'F', 5550.50, "2025/3/10", securitylevel.secretary);
+                employee emp2 = new employee(2, "Sara Soroor", 'F', 5550.50m, "2025/3/10", securitylevel.secretary);
                 Console.WriteLine(emp2.ToString());
             }
         }
